@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#4d5b94",
+                    "tertiary-container": "#a73400",
+                    "on-secondary-fixed": "#03164d",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#dce1ff",
+                    "on-primary-fixed-variant": "#0039b5",
+                    "on-primary-fixed": "#001551",
+                    "on-primary-container": "#cad3ff",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#faf8ff",
+                    "surface-container-highest": "#e2e1ed",
+                    "primary": "#0037b0",
+                    "on-surface": "#1a1b23",
+                    "on-tertiary-container": "#ffc9b7",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#7f2500",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb59c",
+                    "surface-dim": "#d9d9e5",
+                    "on-secondary-fixed-variant": "#35437b",
+                    "inverse-surface": "#2e3039",
+                    "secondary-fixed-dim": "#b7c4ff",
+                    "primary-container": "#1d4ed8",
+                    "surface-variant": "#e2e1ed",
+                    "surface-container-high": "#e8e7f3",
+                    "on-background": "#1a1b23",
+                    "surface-container-low": "#f3f2fe",
+                    "on-secondary-container": "#3d4c83",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c4c5d7",
+                    "on-tertiary-fixed-variant": "#832700",
+                    "surface": "#faf8ff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "surface-bright": "#faf8ff",
+                    "secondary-container": "#b0befe",
+                    "outline": "#747686",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-tint": "#2151da",
+                    "on-tertiary-fixed": "#390c00",
+                    "inverse-primary": "#b7c4ff",
+                    "secondary-fixed": "#dce1ff",
+                    "on-surface-variant": "#434655",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "surface-container": "#ededf9",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #0037b0;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #0037b0;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Sidebar Component (Predicted) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-100 dark:bg-slate-900 flex flex-col h-full py-6 z-50">
+<div class="px-8 mb-10">
+<h1 class="text-lg font-black text-blue-900 dark:text-blue-50 tracking-tight">Admin Center</h1>
+<p class="text-xs text-on-surface-variant font-medium opacity-70">Driving Excellence</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- User Management -->
+<a class="flex items-center text-slate-600 dark:text-slate-400 px-8 py-3 font-['Inter'] text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+                User Management
+            </a>
+<!-- Roles & Permissions (ACTIVE) -->
+<a class="flex items-center text-blue-700 dark:text-blue-400 font-bold bg-white dark:bg-slate-950 rounded-l-full ml-4 pl-4 py-3 shadow-sm font-['Inter'] text-sm active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                Roles &amp; Permissions
+            </a>
+<!-- Courses -->
+<a class="flex items-center text-slate-600 dark:text-slate-400 px-8 py-3 font-['Inter'] text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="school">school</span>
+                Courses
+            </a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full flex items-center text-slate-600 dark:text-slate-400 px-8 py-3 font-['Inter'] text-sm font-medium hover:bg-error-container/20 hover:text-error transition-all active:translate-x-1 duration-200">
+<span class="material-symbols-outlined mr-3" data-icon="logout">logout</span>
+                Logout
+            </button>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="pl-64 min-h-screen">
+<!-- TopAppBar Component (Predicted) -->
+<header class="w-full sticky top-0 z-40 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-8 h-16 w-full max-w-full">
+<div class="flex items-center gap-6">
+<span class="text-xl font-bold text-blue-800 dark:text-blue-200 font-['Inter'] tracking-tight">Precision Navigator</span>
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Tìm kiếm nhanh..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors px-3 py-2 text-sm font-medium" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors px-3 py-2 text-sm font-medium" href="#">Reports</a>
+<a class="text-blue-700 dark:text-blue-400 font-semibold border-b-2 border-blue-700 px-3 py-2 text-sm transition-colors" href="#">Settings</a>
+</div>
+<div class="h-6 w-px bg-slate-200 mx-2"></div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<img alt="Administrator Profile" class="w-8 h-8 rounded-full border-2 border-primary-container object-cover" data-alt="Close-up portrait of a professional male administrator in a clean modern office setting, soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0a5CfyJlXwWZwLwQxaWdomOU4WmiH-fVMiUT6pQOsPX-XjY5p0HQczKlBPR7sbJdBixqbO2wnWtc3bvjW_zHzlNQvIi4hTyLsctThAULhQ7iyIYLUz-1mvwoqN6vjwukGQi6zz3bsyOJp3BcS3adzVLVUyqOw5HguBZILlMqda3cT55WlNrYWB09oll6W0-hIxVYXK5q4vOfvxc5KgZDNij1FRcs8rnOdaVLTlhHuUDcZ17LkhPtgq6hV7R5suhW5mmXOucltZ7M"/>
+</div>
+</header>
+<!-- Screen Content -->
+<div class="p-8 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<div class="mb-10 relative overflow-hidden p-8 rounded-3xl bg-gradient-to-br from-primary to-primary-container text-white shadow-xl">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined bg-white/20 p-2 rounded-xl text-white" data-icon="security">security</span>
+<h2 class="text-3xl font-extrabold tracking-tighter">Phân quyền &amp; Vai trò (RBAC)</h2>
+</div>
+<p class="text-white/80 max-w-2xl text-lg leading-relaxed font-light">
+                        Quản lý quyền truy cập của người dùng dựa trên vai trò. Thiết lập các ranh giới bảo mật và đảm bảo mỗi thành viên chỉ truy cập vào các tài nguyên cần thiết để vận hành hiệu quả.
+                    </p>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Role List -->
+<div class="col-span-12 lg:col-span-4 space-y-4">
+<div class="bg-surface-container-low p-6 rounded-3xl">
+<h3 class="text-sm font-bold text-on-surface-variant uppercase tracking-widest mb-6">Danh sách vai trò</h3>
+<div class="space-y-3">
+<!-- Super Admin -->
+<button class="w-full text-left p-4 rounded-2xl bg-surface-container-lowest hover:bg-white transition-all group border border-transparent hover:border-primary-fixed">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">Super Admin</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium">Toàn quyền truy cập hệ thống cao nhất.</p>
+</button>
+<!-- Manager -->
+<button class="w-full text-left p-4 rounded-2xl bg-surface-container-lowest hover:bg-white transition-all group border border-transparent hover:border-primary-fixed">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">Manager</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="admin_panel_settings">admin_panel_settings</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium">Quản lý khóa học, học viên và báo cáo.</p>
+</button>
+<!-- Instructor (Active) -->
+<button class="w-full text-left p-4 rounded-2xl bg-primary text-white transition-all ring-4 ring-primary/10 shadow-lg scale-[1.02]">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold">Instructor</span>
+<span class="material-symbols-outlined text-white text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="text-xs text-white/80 font-medium">Quản lý lịch dạy và đánh giá học viên.</p>
+</button>
+<!-- Student -->
+<button class="w-full text-left p-4 rounded-2xl bg-surface-container-lowest hover:bg-white transition-all group border border-transparent hover:border-primary-fixed">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">Student</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="person">person</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium">Xem khóa học, lịch học và kết quả cá nhân.</p>
+</button>
+</div>
+</div>
+<!-- Role Stats Widget (Editorial Feel) -->
+<div class="bg-primary-container p-6 rounded-3xl text-white">
+<p class="text-xs font-bold uppercase tracking-widest opacity-70 mb-4">Thống kê người dùng</p>
+<div class="flex items-end justify-between">
+<div>
+<h4 class="text-3xl font-black -tracking-tight">124</h4>
+<p class="text-sm font-medium opacity-80">Instructors hiện tại</p>
+</div>
+<div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="monitoring">monitoring</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Permissions Editor -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-3xl shadow-sm border border-outline-variant/10 overflow-hidden flex flex-col h-full">
+<div class="p-8 border-b border-surface-container-high">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="text-2xl font-extrabold text-on-surface tracking-tight">Quyền hạn cho Instructor</h3>
+<p class="text-on-surface-variant text-sm mt-1">Tùy chỉnh quyền hạn chi tiết cho nhóm giáo viên hướng dẫn.</p>
+</div>
+<span class="px-4 py-1.5 bg-primary-fixed text-on-primary-fixed rounded-full text-xs font-bold uppercase tracking-widest">Draft Mode</span>
+</div>
+</div>
+<div class="p-8 flex-1 space-y-10">
+<!-- Nhóm Core Permissions -->
+<section>
+<div class="flex items-center gap-2 mb-6">
+<div class="w-1.5 h-6 bg-primary rounded-full"></div>
+<h4 class="text-lg font-bold text-on-surface">Nhóm Core Permissions</h4>
+</div>
+<div class="grid gap-4">
+<!-- Perm 1 -->
+<label class="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-white rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="visibility">visibility</span>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Xem khóa học</p>
+<p class="text-xs text-on-surface-variant">Cho phép truy cập danh sách và chi tiết các khóa học đang mở.</p>
+</div>
+</div>
+<div class="relative inline-block w-12 h-6 transition duration-200 ease-in">
+<input checked="" class="opacity-0 w-0 h-0 peer" type="checkbox"/>
+<span class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-300 rounded-full transition-all duration-300 peer-checked:bg-primary before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:rounded-full before:transition-all peer-checked:before:translate-x-6"></span>
+</div>
+</label>
+<!-- Perm 2 -->
+<label class="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-white rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="how_to_reg">how_to_reg</span>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Duyệt học viên</p>
+<p class="text-xs text-on-surface-variant">Cho phép xác nhận đăng ký của học viên vào lớp học tương ứng.</p>
+</div>
+</div>
+<div class="relative inline-block w-12 h-6 transition duration-200 ease-in">
+<input checked="" class="opacity-0 w-0 h-0 peer" type="checkbox"/>
+<span class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-300 rounded-full transition-all duration-300 peer-checked:bg-primary before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:rounded-full before:transition-all peer-checked:before:translate-x-6"></span>
+</div>
+</label>
+<!-- Perm 3 -->
+<label class="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-white rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Xem lịch dạy</p>
+<p class="text-xs text-on-surface-variant">Truy cập lịch trình giảng dạy cá nhân và hệ thống phòng học.</p>
+</div>
+</div>
+<div class="relative inline-block w-12 h-6 transition duration-200 ease-in">
+<input checked="" class="opacity-0 w-0 h-0 peer" type="checkbox"/>
+<span class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-300 rounded-full transition-all duration-300 peer-checked:bg-primary before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:rounded-full before:transition-all peer-checked:before:translate-x-6"></span>
+</div>
+</label>
+</div>
+</section>
+<!-- Nhóm Advanced Permissions -->
+<section>
+<div class="flex items-center gap-2 mb-6">
+<div class="w-1.5 h-6 bg-tertiary rounded-full"></div>
+<h4 class="text-lg font-bold text-on-surface">Nhóm Advanced Permissions</h4>
+</div>
+<div class="grid gap-4 opacity-60 grayscale-[0.5]">
+<!-- Perm 4 (Disabled) -->
+<div class="flex items-center justify-between p-4 bg-surface-container-high rounded-2xl cursor-not-allowed">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-white rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="edit_square">edit_square</span>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Chỉnh sửa kết quả thi</p>
+<p class="text-xs text-on-surface-variant">Yêu cầu quyền Manager để thay đổi điểm số sau khi nộp.</p>
+</div>
+</div>
+<div class="relative inline-block w-12 h-6 opacity-40">
+<div class="absolute cursor-not-allowed top-0 left-0 right-0 bottom-0 bg-slate-400 rounded-full before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:rounded-full transition-all"></div>
+</div>
+</div>
+<!-- Perm 5 (Disabled) -->
+<div class="flex items-center justify-between p-4 bg-surface-container-high rounded-2xl cursor-not-allowed">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-white rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="history_edu">history_edu</span>
+</div>
+<div>
+<p class="font-semibold text-on-surface">Truy cập Audit Logs</p>
+<p class="text-xs text-on-surface-variant">Xem nhật ký hoạt động hệ thống của các giáo viên khác.</p>
+</div>
+</div>
+<div class="relative inline-block w-12 h-6 opacity-40">
+<div class="absolute cursor-not-allowed top-0 left-0 right-0 bottom-0 bg-slate-400 rounded-full before:content-[''] before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:rounded-full transition-all"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<div class="p-8 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant italic text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+                                Lần cập nhật cuối: 12 phút trước
+                            </div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2.5 rounded-xl font-bold text-on-surface hover:bg-surface-container-high transition-all active:scale-95 duration-150">
+                                    Hủy thay đổi
+                                </button>
+<button class="px-8 py-2.5 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-150">
+                                    Lưu thay đổi
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

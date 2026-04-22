@@ -40,7 +40,6 @@ Thumbs.db
 # Project-Specific Exclusions (Internal tools and scripts)
 .stitch/
 skills/
-site/
 
 # Helper Python scripts
 *.py

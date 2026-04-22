@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khóa học Lái xe hạng B1 (Số tự động) - Navigator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#b0befe",
+                        "surface-bright": "#faf8ff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#2151da",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#001551",
+                        "primary": "#0037b0",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "primary-container": "#1d4ed8",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "outline": "#747686",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9d9e5",
+                        "tertiary": "#7f2500",
+                        "surface-container-low": "#f3f2fe",
+                        "secondary-fixed-dim": "#b7c4ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e8e7f3",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary-container": "#ffc9b7",
+                        "tertiary-container": "#a73400",
+                        "secondary": "#4d5b94",
+                        "on-primary-container": "#cad3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#03164d",
+                        "inverse-on-surface": "#f0f0fb",
+                        "background": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "surface-variant": "#e2e1ed",
+                        "secondary-fixed": "#dce1ff",
+                        "primary-fixed": "#dce1ff",
+                        "outline-variant": "#c4c5d7",
+                        "on-surface-variant": "#434655",
+                        "on-secondary-fixed-variant": "#35437b",
+                        "on-secondary-container": "#3d4c83",
+                        "surface-container-highest": "#e2e1ed",
+                        "surface-container": "#ededf9",
+                        "tertiary-fixed": "#ffdbcf",
+                        "inverse-surface": "#2e3039",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "on-surface": "#1a1b23",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#b7c4ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-background": "#1a1b23",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-50 bg-[#faf8ff] dark:bg-slate-950 bg-slate-100/50 dark:bg-slate-900/50 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-6 md:px-12 max-w-7xl mx-auto h-20">
+<div class="text-xl font-black tracking-tighter text-[#0037b0] dark:text-blue-400">
+                Navigator
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-[#0037b0] dark:text-blue-400 font-bold border-b-2 border-[#0037b0] pb-1 transition-all duration-200" href="#">Khóa học</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-[#1D4ED8] dark:hover:text-blue-300 transition-all duration-200" href="#">Lịch học</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-[#1D4ED8] dark:hover:text-blue-300 transition-all duration-200" href="#">Học phí</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-[#1D4ED8] dark:hover:text-blue-300 transition-all duration-200" href="#">Hướng dẫn</a>
+</nav>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-6 py-2.5 rounded-xl text-sm font-semibold tracking-tight active:scale-95 transition-all shadow-lg shadow-primary/10">
+                Đăng ký học ngay
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-gradient-to-br from-primary to-primary-container py-24 md:py-32">
+<div class="absolute inset-0 opacity-10">
+<svg class="h-full w-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0 100 C 20 0 50 0 100 100 Z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-on-primary-container text-xs font-bold uppercase tracking-wider mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+                        Chương trình đào tạo chuẩn
+                    </div>
+<h1 class="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight mb-8">
+                        Khóa học Lái xe hạng B1 <br/><span class="text-secondary-container">(Số tự động)</span>
+</h1>
+<div class="flex flex-wrap gap-4">
+<button class="bg-surface-container-lowest text-primary hover:bg-surface-bright px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-black/10 active:scale-95 transition-all">
+                            Đăng ký khóa này
+                        </button>
+<button class="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md px-8 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all">
+                            Xem lộ trình học
+                        </button>
+</div>
+</div>
+</div>
+<!-- Abstract Illustration Decor -->
+<div class="absolute right-0 bottom-0 top-0 w-1/3 hidden lg:block opacity-20">
+<div class="h-full w-full flex items-center justify-center">
+<div class="grid grid-cols-2 gap-4">
+<div class="w-32 h-32 bg-white rounded-3xl rotate-12"></div>
+<div class="w-32 h-32 bg-white rounded-full -rotate-12 translate-y-12"></div>
+<div class="w-32 h-32 border-4 border-white rounded-3xl -rotate-12"></div>
+<div class="w-32 h-32 bg-white rounded-2xl rotate-45 translate-x-8"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Grid -->
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Left Column -->
+<div class="lg:w-[70%] space-y-16">
+<!-- Section: Nội dung chương trình học -->
+<section>
+<div class="flex items-center gap-4 mb-10">
+<div class="w-12 h-12 bg-primary-fixed text-primary flex items-center justify-center rounded-2xl">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<h2 class="text-3xl font-black text-on-surface tracking-tight">Nội dung chương trình học</h2>
+</div>
+<div class="space-y-6">
+<!-- Part 1 -->
+<div class="group bg-surface-container-low rounded-3xl p-8 hover:bg-surface-container-lowest transition-all duration-300">
+<div class="flex items-start gap-6">
+<div class="text-4xl font-black text-primary/20 group-hover:text-primary/40 transition-colors">01</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold text-on-surface mb-3">Phần 1: Lý thuyết</h3>
+<p class="text-on-surface-variant leading-relaxed mb-4">Học viên được trang bị kiến thức nền tảng về luật giao thông đường bộ và các kỹ năng an toàn cơ bản.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-semibold text-primary">600 câu hỏi luật</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-semibold text-primary">Đạo đức người lái xe</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-semibold text-primary">Cấu tạo &amp; Sửa chữa</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Part 2 -->
+<div class="group bg-surface-container-low rounded-3xl p-8 hover:bg-surface-container-lowest transition-all duration-300">
+<div class="flex items-start gap-6">
+<div class="text-4xl font-black text-primary/20 group-hover:text-primary/40 transition-colors">02</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold text-on-surface mb-3">Phần 2: Thực hành sa hình</h3>
+<p class="text-on-surface-variant leading-relaxed mb-4">Luyện tập trực tiếp trên sân tập tiêu chuẩn quốc gia với giáo viên hướng dẫn chuyên nghiệp.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-semibold text-primary">11 bài thi sát hạch</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-semibold text-primary">Sân tập đạt chuẩn</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-semibold text-primary">Xe số tự động đời mới</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Part 3 -->
+<div class="group bg-surface-container-low rounded-3xl p-8 hover:bg-surface-container-lowest transition-all duration-300">
+<div class="flex items-start gap-6">
+<div class="text-4xl font-black text-primary/20 group-hover:text-primary/40 transition-colors">03</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold text-on-surface mb-3">Phần 3: Thực hành đường trường</h3>
+<p class="text-on-surface-variant leading-relaxed mb-4">Nâng cao kỹ năng xử lý tình huống thực tế qua các cung đường giao thông thực tế dưới sự giám sát.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-semibold text-primary">710km giám sát hành trình</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-semibold text-primary">Thiết bị DAT hiện đại</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-semibold text-primary">Giao thông đô thị</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Học phí và chính sách -->
+<section class="bg-primary/5 rounded-[40px] p-10 border border-primary/10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-white text-primary flex items-center justify-center rounded-2xl shadow-sm">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<h2 class="text-3xl font-black text-on-surface tracking-tight">Học phí và chính sách</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium text-on-surface">Cam kết trọn gói, không phát sinh chi phí phụ.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium text-on-surface">Đã bao gồm lệ phí thi và cấp bằng.</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium text-on-surface">Hỗ trợ trả góp 0% lãi suất.</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-medium text-on-surface">Hoàn phí nếu không hài lòng chất lượng.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Decorative Image -->
+<div class="relative h-[400px] w-full rounded-[40px] overflow-hidden group">
+<img alt="Luxury car interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="modern car dashboard interior with digital screens at twilight soft focus on steering wheel high end driving aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlXu_8M3S8HMLy7qZLR-Gb_P2NkWIKxBqOV_EBPz5ctTR20BjARyKULrpZ34x4bfirEbs37_QmMPb4NOD25zGZad8Pbw2jKnQCWbJ8ka2SiV1IaVirf-zqy07FlihDW5H_GwsBgXW7rifC1EdFFuw5thYdWBNB1QK_W8sBVLaczLFzAEH5yeKEFdvM1gVTXJSwaCY4ftpiZJe-5XSgbQmFGmWvubS65OdznrVaabQIN3I540r2f_0A0R5eKJQ-pUABjca6hdzSL6w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent flex items-end p-12">
+<div class="text-white">
+<p class="text-sm font-bold uppercase tracking-widest mb-2 opacity-80">Trải nghiệm</p>
+<h4 class="text-3xl font-black">Học lái trên dòng xe hiện đại nhất</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Sticky Sidebar) -->
+<aside class="lg:w-[30%]">
+<div class="sticky top-28 space-y-6">
+<div class="bg-surface-container-lowest rounded-[32px] p-8 shadow-2xl shadow-primary/5 border border-outline-variant/10">
+<div class="mb-8">
+<p class="text-on-surface-variant text-sm font-semibold mb-1 uppercase tracking-wider">Học phí trọn gói</p>
+<h3 class="text-4xl font-black text-primary">15.000.000 <span class="text-base font-bold">VNĐ</span></h3>
+</div>
+<div class="space-y-4 mb-10 border-y border-outline-variant/20 py-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span class="text-sm font-medium">Thời gian học</span>
+</div>
+<span class="font-bold">3 tháng</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span class="text-sm font-medium">Khai giảng</span>
+</div>
+<span class="font-bold text-primary">15/05/2024</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+<span class="text-sm font-medium">Cam kết</span>
+</div>
+<span class="font-bold">Tỉ lệ đỗ 98%</span>
+</div>
+</div>
+<!-- Consultation Form -->
+<div class="bg-surface-container rounded-2xl p-6">
+<h4 class="text-lg font-bold mb-4">Tư vấn nhanh</h4>
+<form action="#" class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-tighter">Họ tên</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Nguyễn Văn A" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-tighter">Số điện thoại</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="0900 xxx xxx" type="tel"/>
+</div>
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary py-3.5 rounded-xl font-bold shadow-lg shadow-primary/20 active:scale-95 transition-all" type="submit">
+                                        Gửi yêu cầu
+                                    </button>
+</form>
+</div>
+</div>
+<!-- Mini Promo Card -->
+<div class="bg-gradient-to-br from-tertiary-container to-tertiary rounded-[32px] p-6 text-white overflow-hidden relative">
+<div class="relative z-10">
+<h5 class="text-lg font-black mb-2">Ưu đãi tháng 5</h5>
+<p class="text-sm opacity-90 leading-snug">Giảm ngay 500k khi đăng ký theo nhóm 2 người.</p>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10 rotate-12" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 mt-20">
+<div class="w-full py-12 px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-lg font-bold text-slate-900 dark:text-slate-100">
+                    Navigator Driving School
+                </div>
+<p class="font-['Inter'] text-xs leading-relaxed text-slate-500 dark:text-slate-500 max-w-sm">
+                    © 2024 The Precision Navigator. Authoritative excellence in driving instruction.
+                </p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 md:justify-end">
+<a class="font-['Inter'] text-xs text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Liên hệ</a>
+<a class="font-['Inter'] text-xs text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Địa chỉ</a>
+<a class="font-['Inter'] text-xs text-[#0037b0] dark:text-blue-400 underline opacity-80 hover:opacity-100 transition-all" href="#">Hotline: 1900-NAV</a>
+<a class="font-['Inter'] text-xs text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Điều khoản</a>
+</div>
+</div>
+</footer>
+</body></html>

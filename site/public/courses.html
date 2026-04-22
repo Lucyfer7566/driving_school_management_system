@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Danh sách khóa học - Precision Drive</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffc9b7",
+                        "surface-container-low": "#f3f2fe",
+                        "surface-container": "#ededf9",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#2151da",
+                        "on-secondary-fixed-variant": "#35437b",
+                        "on-secondary-container": "#3d4c83",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "outline-variant": "#c4c5d7",
+                        "on-secondary-fixed": "#03164d",
+                        "tertiary-container": "#a73400",
+                        "secondary-fixed": "#dce1ff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffdbcf",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#b0befe",
+                        "primary-container": "#1d4ed8",
+                        "surface-dim": "#d9d9e5",
+                        "on-primary-container": "#cad3ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#1a1b23",
+                        "tertiary": "#7f2500",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "primary": "#0037b0",
+                        "surface": "#faf8ff",
+                        "inverse-surface": "#2e3039",
+                        "secondary-fixed-dim": "#b7c4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "secondary": "#4d5b94",
+                        "on-primary-fixed": "#001551",
+                        "surface-container-high": "#e8e7f3",
+                        "on-tertiary-fixed": "#390c00",
+                        "surface-container-highest": "#e2e1ed",
+                        "on-surface": "#1a1b23",
+                        "surface-variant": "#e2e1ed",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "surface-bright": "#faf8ff",
+                        "background": "#faf8ff",
+                        "outline": "#747686",
+                        "inverse-primary": "#b7c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-effect { backdrop-filter: blur(24px); background-color: rgba(255, 255, 255, 0.6); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black tracking-tighter text-blue-900 dark:text-blue-100">Precision Drive</span>
+<div class="hidden md:flex gap-6 items-center font-sans antialiased tracking-tight text-sm">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-all duration-200" href="#">Dashboard</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 font-bold pb-1 hover:text-blue-600 dark:hover:text-blue-300 transition-all duration-200" href="#">Khóa học</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-all duration-200" href="#">Lịch học</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-all duration-200" href="#">Học viên</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-all duration-200" href="#">Báo cáo</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-slate-200/20 dark:bg-slate-800/20 rounded-full px-3 py-1 gap-2">
+<span class="material-symbols-outlined text-sm text-slate-500">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs w-32" placeholder="Tìm kiếm..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-slate-500 hover:text-blue-600 transition-colors">notifications</button>
+<button class="material-symbols-outlined text-slate-500 hover:text-blue-600 transition-colors">settings</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Instructor profile" class="h-full w-full object-cover" data-alt="Close-up professional portrait of a confident male driving instructor in a clean white shirt with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTEQncKLiDvU0bPyjZwYiOFmo1HsbphHsd9q0tS1YIAEmLQxRclSP0gRTzHMlvDDtp2vAFZPyXoI8NIrGlH5GyyUJyur-E1SGiR4VK7G3pFf3ISqMoVPgmZVH0o7EoyWOegW7RqB2Iy9BmkyVDe9NyeNc3M2RfsZysHBNtEmXQpcMoZG-f7wgUyrIvD40g3qSh8gNADcPn1mDpkKNM2PLNHeI4kgGXmBVXJ5LHCoP7jh8-9m2Vh16thUctaFzW3J1-PLi6KRmBU7Y"/>
+</div>
+</div>
+<button class="hidden sm:block px-4 py-2 bg-primary-container text-white text-xs font-bold rounded-lg active:scale-95 transition-transform">Đăng ký ngay</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<header class="max-w-7xl mx-auto px-6 mb-12">
+<div class="relative overflow-hidden rounded-3xl bg-primary px-8 py-16 md:px-16 md:py-20 flex flex-col items-center text-center">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block px-3 py-1 bg-white/10 text-white/90 text-xs font-bold tracking-widest uppercase rounded-full mb-6">Đào tạo chuyên nghiệp</span>
+<h1 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-6 leading-tight">Danh sách khóa học lái xe</h1>
+<p class="text-on-primary-container text-lg md:text-xl font-medium opacity-90 leading-relaxed">
+                        Chương trình đào tạo hiện đại, lộ trình cá nhân hóa giúp bạn làm chủ tay lái và chinh phục mọi cung đường một cách tự tin nhất.
+                    </p>
+</div>
+</div>
+</header>
+<!-- Filter/Search Section -->
+<section class="max-w-7xl mx-auto px-6 mb-12">
+<div class="bg-surface-container-low rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="flex flex-wrap gap-2 w-full md:w-auto">
+<button class="px-5 py-2.5 rounded-xl bg-primary text-on-primary text-sm font-bold shadow-sm">Tất cả</button>
+<button class="px-5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface-variant text-sm font-semibold hover:bg-surface-container-high transition-colors">Hạng B1</button>
+<button class="px-5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface-variant text-sm font-semibold hover:bg-surface-container-high transition-colors">Hạng B2</button>
+<button class="px-5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface-variant text-sm font-semibold hover:bg-surface-container-high transition-colors">Hạng C</button>
+</div>
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-lowest border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-sm" placeholder="Tìm tên khóa học hoặc mã hiệu..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Course Grid -->
+<section class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course Card 1: B1 -->
+<div class="group bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-56 relative bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center p-8">
+<img alt="B1 Car" class="w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Abstract minimalist 3D render of a sleek modern electric sedan with smooth surfaces and clean lines in a bright white studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtdhL4cMJCGKcrIP31hP5RIDo8nFVivqRd4z0RMWwmWSEaqbaIgXPNvxpZ5XeG_UMQcvcoTt0-WHWaAkqOShMawOXS5HVVMs17RQITmReETptRL2aFgZD6PQrKcziaODIi9GdJFi5pUe6KjnGQMKMBIlLXikCGLI7TMSLO0dKcprFfeG-WjkTcmp2gT6mxpUA8_UZTYbKx5xfA9EDCEWbuGP0SvXEtvgDBt82hSQcox0g2HYq0iHxluBrn_WlTniod89bK58iFtzw"/>
+</div>
+<div class="absolute top-6 left-6">
+<span class="px-4 py-1.5 bg-white/80 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-primary">Hạng B1</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="text-2xl font-black tracking-tight text-on-surface mb-3">Khóa B1 Số Tự Động</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Lý tưởng cho người đi làm và gia đình. Tập trung vào kỹ năng vận hành xe số tự động an toàn trong đô thị.</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">schedule</span> Thời gian học
+                            </span>
+<span class="font-bold text-on-surface">3 tháng</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">event</span> Dự kiến sát hạch
+                            </span>
+<span class="font-bold text-on-surface">Tháng 05/2024</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant text-sm">Học phí trọn gói</span>
+<span class="text-2xl font-black text-primary">15.000.000đ</span>
+</div>
+</div>
+<div class="mt-auto grid grid-cols-1 gap-3">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-2xl hover:brightness-110 transition-all active:scale-[0.98]">Đăng ký ngay</button>
+<button class="w-full py-4 bg-surface-container-lowest border border-outline-variant/30 text-on-surface font-bold rounded-2xl hover:bg-surface-container-high transition-all active:scale-[0.98]">Xem chi tiết</button>
+</div>
+</div>
+</div>
+<!-- Course Card 2: B2 -->
+<div class="group bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-56 relative bg-gradient-to-br from-slate-100 to-blue-100 overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center p-8">
+<img alt="B2 Truck" class="w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist abstract vector-style render of a classic pickup truck silhouette emphasizing precision engineering and mechanical durability" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe3y9OwHRkQKmjhLK-4chlyq_okxDDf8nLOg59FN3bqsxl-lhsog7tDD-ZdcHa6yEHgSKNMRPiHsH7Esu1GVI7XkvVZ6JIKxjn21Y3cis7WEl257Xl4Tqon8byMMxIcKWojRZdVGt531ARZMhVN-wIQ0rwkn2zHHrGTE9P3djsRSVXtB7vBJGrNRHOnwVR4DVbGEX7OquJvoOdiUleFQX0JuZXNIlFfjOPuE1To9CgWjQlWjzRCkUrp7kdH9f-5Y6Q1rBkUaX5KwQ"/>
+</div>
+<div class="absolute top-6 left-6">
+<span class="px-4 py-1.5 bg-white/80 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-primary">Hạng B2</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="text-2xl font-black tracking-tight text-on-surface mb-3">Khóa B2 Số Sàn</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Dành cho những người muốn làm chủ hoàn toàn kỹ năng lái xe chuyên nghiệp. Phù hợp cho cả kinh doanh vận tải.</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">schedule</span> Thời gian học
+                            </span>
+<span class="font-bold text-on-surface">3.5 tháng</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">event</span> Dự kiến sát hạch
+                            </span>
+<span class="font-bold text-on-surface">Tháng 06/2024</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant text-sm">Học phí trọn gói</span>
+<span class="text-2xl font-black text-primary">14.000.000đ</span>
+</div>
+</div>
+<div class="mt-auto grid grid-cols-1 gap-3">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-2xl hover:brightness-110 transition-all active:scale-[0.98]">Đăng ký ngay</button>
+<button class="w-full py-4 bg-surface-container-lowest border border-outline-variant/30 text-on-surface font-bold rounded-2xl hover:bg-surface-container-high transition-all active:scale-[0.98]">Xem chi tiết</button>
+</div>
+</div>
+</div>
+<!-- Course Card 3: C -->
+<div class="group bg-surface-container-low rounded-[2rem] overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-56 relative bg-gradient-to-br from-orange-50 to-blue-50 overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center p-8">
+<img alt="Class C Truck" class="w-full h-full object-contain mix-blend-multiply opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Stylized 3D graphic of a heavy-duty transport truck with a powerful engine profile, rendered in professional navy and silver tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcNt0_ZGxMJ6cFkin3o118_tSesl4-oepz26bL5LykxGKvuZTIjdo4VTM7OI2MKbOSGdX5T2TwbdccAnqwwIpqu83Gu9h8eGp21ITR0JKZKkwcL5zwLIu_fJ64Lq6_ZBAYMfux6bws33-1dc5WSpG7Y0e-x8koHcsnDWzcIWXjcYvhA_GHTN3KqPkggrkZxRLOibTSSng6uMw_cvTAlIF0eJC3BpEo0n2tScQBAMS-ieAqMzXUkYgzVlt9V6yCZ9Vnp9kdIxC49sQ"/>
+</div>
+<div class="absolute top-6 left-6">
+<span class="px-4 py-1.5 bg-white/80 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-primary">Hạng C</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="text-2xl font-black tracking-tight text-on-surface mb-3">Khóa C Tải</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Đào tạo lái xe tải trọng tải lớn trên 3.500kg. Quy trình đào tạo khắt khe và thực tiễn nhất cho tài xế đường dài.</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">schedule</span> Thời gian học
+                            </span>
+<span class="font-bold text-on-surface">5 tháng</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">event</span> Dự kiến sát hạch
+                            </span>
+<span class="font-bold text-on-surface">Tháng 08/2024</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant text-sm">Học phí trọn gói</span>
+<span class="text-2xl font-black text-primary">18.000.000đ</span>
+</div>
+</div>
+<div class="mt-auto grid grid-cols-1 gap-3">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-2xl hover:brightness-110 transition-all active:scale-[0.98]">Đăng ký ngay</button>
+<button class="w-full py-4 bg-surface-container-lowest border border-outline-variant/30 text-on-surface font-bold rounded-2xl hover:bg-surface-container-high transition-all active:scale-[0.98]">Xem chi tiết</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="max-w-7xl mx-auto px-6 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="text-center">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Tỉ lệ đỗ 98%</h4>
+<p class="text-xs text-on-surface-variant">Quy trình đào tạo tối ưu kết hợp mẹo thi sát hạch thực tiễn.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Xe đời mới 100%</h4>
+<p class="text-xs text-on-surface-variant">Sử dụng các dòng xe hiện đại, điều hòa mát mẻ, vận hành êm ái.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">update</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Giờ học linh hoạt</h4>
+<p class="text-xs text-on-surface-variant">Tự chọn thời gian học rảnh: sáng, chiều hoặc tối kể cả T7/CN.</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Học phí trả góp</h4>
+<p class="text-xs text-on-surface-variant">Hỗ trợ chia nhỏ học phí đóng làm nhiều đợt 0% lãi suất.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-16 pb-8 bg-slate-50 dark:bg-slate-950">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-slate-200 dark:border-slate-800 pt-16">
+<div>
+<div class="text-lg font-black text-blue-900 dark:text-white mb-4">Precision Navigator Academy</div>
+<p class="text-slate-500 dark:text-slate-500 text-sm mb-6 leading-relaxed">Trung tâm đào tạo lái xe uy tín hàng đầu, cam kết mang đến chất lượng giảng dạy chuẩn quốc tế và trải nghiệm học tập hiện đại.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-slate-500 hover:text-blue-600 transition-colors" href="#">
+<span class="material-symbols-outlined">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-slate-500 hover:text-blue-600 transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<span class="text-xs font-medium tracking-wide uppercase text-blue-800 dark:text-blue-400">Điều hướng</span>
+<a class="text-xs font-medium tracking-wide uppercase text-slate-500 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-colors" href="#">Khóa học</a>
+<a class="text-xs font-medium tracking-wide uppercase text-slate-500 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-colors" href="#">Tuyển sinh</a>
+<a class="text-xs font-medium tracking-wide uppercase text-slate-500 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-colors" href="#">Quy định</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-medium tracking-wide uppercase text-blue-800 dark:text-blue-400">Pháp lý</span>
+<a class="text-xs font-medium tracking-wide uppercase text-slate-500 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-colors" href="#">Liên hệ</a>
+<a class="text-xs font-medium tracking-wide uppercase text-slate-500 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-colors" href="#">Bảo mật</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-medium tracking-wide uppercase text-blue-800 dark:text-blue-400">Liên hệ trực tiếp</span>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-lg">location_on</span>
+<p class="text-sm text-slate-500 dark:text-slate-400">123 Đường Sáng Tạo, Khu Công Nghệ Cao, Quận 9, TP. Hồ Chí Minh</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-lg">call</span>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-bold">1900 6789</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-lg">mail</span>
+<p class="text-sm text-slate-500 dark:text-slate-400">contact@precisiondrive.vn</p>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-slate-100 dark:border-slate-900 text-center">
+<p class="text-xs font-medium tracking-wide uppercase text-slate-500 dark:text-slate-500">© 2024 Precision Navigator Academy. Technical Excellence in Driving.</p>
+</div>
+</footer>
+</body></html>

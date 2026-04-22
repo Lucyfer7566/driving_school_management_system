@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lộ trình học cá nhân hóa | Navigator</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "surface": "#faf8ff",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "secondary": "#4d5b94",
+                    "primary-container": "#1d4ed8",
+                    "surface-variant": "#e2e1ed",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#ededf9",
+                    "on-primary-container": "#cad3ff",
+                    "surface-bright": "#faf8ff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#832700",
+                    "background": "#faf8ff",
+                    "tertiary-fixed-dim": "#ffb59c",
+                    "on-tertiary-container": "#ffc9b7",
+                    "primary-fixed": "#dce1ff",
+                    "on-surface": "#1a1b23",
+                    "on-secondary-fixed-variant": "#35437b",
+                    "surface-container-high": "#e8e7f3",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#2e3039",
+                    "primary": "#0037b0",
+                    "on-secondary-fixed": "#03164d",
+                    "on-background": "#1a1b23",
+                    "surface-container-low": "#f3f2fe",
+                    "outline-variant": "#c4c5d7",
+                    "on-secondary-container": "#3d4c83",
+                    "tertiary-container": "#a73400",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#7f2500",
+                    "on-surface-variant": "#434655",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d9d9e5",
+                    "outline": "#747686",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#0039b5",
+                    "inverse-primary": "#b7c4ff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "surface-container-highest": "#e2e1ed",
+                    "secondary-fixed": "#dce1ff",
+                    "secondary-fixed-dim": "#b7c4ff",
+                    "secondary-container": "#b0befe",
+                    "on-primary-fixed": "#001551",
+                    "on-tertiary-fixed": "#390c00",
+                    "surface-tint": "#2151da"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- HEADER: TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf8ff] dark:bg-slate-950 flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-black tracking-tighter text-[#0037b0] dark:text-blue-500">
+            Navigator
+        </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-[#0037b0] dark:text-blue-400 font-bold hover:text-[#1D4ED8] dark:hover:text-blue-300 transition-all duration-200" href="#">Khóa học</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-[#1D4ED8] dark:hover:text-blue-300 transition-all duration-200" href="#">Lịch học</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-[#1D4ED8] dark:hover:text-blue-300 transition-all duration-200" href="#">Học phí</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-[#1D4ED8] dark:hover:text-blue-300 transition-all duration-200" href="#">Hướng dẫn</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-medium scale-95 active:scale-90 transition-transform">
+            Đăng nhập
+        </button>
+</header>
+<main class="pt-20">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-gradient-to-br from-primary-container to-primary py-24 px-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="z-10 max-w-2xl">
+<h1 class="text-4xl md:text-6xl font-black text-on-primary tracking-tight mb-6 leading-tight">
+                    Lộ trình lấy bằng lái xe B1 của bạn
+                </h1>
+<p class="text-lg md:text-xl text-on-primary-container opacity-90 leading-relaxed mb-8">
+                    Từ lúc đăng ký cho đến khi cầm bằng, chúng tôi đồng hành cùng bạn trên mọi kilomet. Một kế hoạch học tập được tối ưu hóa cho sự an toàn và thành công.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-surface-container-lowest text-primary px-8 py-3 rounded-xl font-bold shadow-lg hover:scale-105 transition-transform">
+                        Bắt đầu ngay
+                    </button>
+<button class="border border-on-primary-container text-on-primary px-8 py-3 rounded-xl font-medium hover:bg-white/10 transition-colors">
+                        Xem chi tiết
+                    </button>
+</div>
+</div>
+<div class="relative z-10 w-full md:w-1/2 flex justify-center">
+<div class="glass-panel p-8 rounded-3xl border border-white/20 shadow-2xl w-full max-w-md">
+<div class="relative aspect-square w-full">
+<img class="w-full h-full object-cover rounded-2xl" data-alt="abstract minimalist vector line drawing of a car dashboard speedometer and digital interface in navy blue and white tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCij9cTJqssLvJUj85fZcGbO7gSfHD3pwtuw81VVWkTyI6qYh5Uk8s-qFblhqtqa03yoZsJS594LtR7srdm11gx84Wn9uK-hKI_5rrbWHvLqU2WDgeEI3sISJkEIaYjm1an1ew0uXnUHswegJ2Rqg7GeEW3vsq5fcCvRi8PlCRDqnoK5oGnrt93wJhbNTz6YtTTLthLbCRtVIrB2mVtMBfhlyhh51FmsFL8o-yZjOu18ssRVprz673tbYE-HJNtu7beVrMst-pATJQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent rounded-2xl"></div>
+</div>
+</div>
+<!-- Abstract floating element -->
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary-fixed-dim/20 blur-3xl rounded-full"></div>
+<div class="absolute -bottom-12 -left-12 w-48 h-48 bg-on-primary-container/10 blur-3xl rounded-full"></div>
+</div>
+</section>
+<!-- MAIN CONTENT: STEPPER TIMELINE -->
+<section class="max-w-6xl mx-auto py-24 px-8">
+<div class="flex flex-col items-center mb-16">
+<span class="text-primary font-bold tracking-widest uppercase text-xs mb-2">Quy trình đào tạo</span>
+<h2 class="text-3xl font-black text-on-surface tracking-tight">Hành trình trở thành tài xế chuyên nghiệp</h2>
+</div>
+<div class="relative">
+<!-- Vertical Line (Desktop only) -->
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-2 bg-surface-container-highest -translate-x-1/2 rounded-full"></div>
+<div class="space-y-12 relative">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center gap-8 group">
+<div class="w-full md:w-1/2 flex justify-end order-2 md:order-1">
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-transparent group-hover:border-primary-fixed-dim transition-all duration-300 w-full max-w-md h-full flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-4">
+<div class="md:hidden flex h-12 w-12 items-center justify-center rounded-full bg-primary-container text-white shrink-0">
+<span class="material-symbols-outlined" data-icon="app_registration">app_registration</span>
+</div>
+<h3 class="text-xl font-bold text-primary">Đăng ký &amp; Nộp hồ sơ</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Chuẩn bị các giấy tờ cần thiết, thực hiện khám sức khỏe định kỳ và hoàn thiện mọi thủ tục hành chính tại trung tâm.</p>
+</div>
+</div>
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 h-14 w-14 items-center justify-center rounded-full bg-primary-container text-white z-10 border-4 border-surface group-hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined" data-icon="app_registration">app_registration</span>
+</div>
+<div class="w-full md:w-1/2 order-3 md:order-3">
+<div class="hidden md:block px-8 py-4 bg-surface-container-low rounded-xl text-sm font-medium text-primary uppercase tracking-widest w-fit">Bước khởi đầu</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row items-center gap-8 group">
+<div class="w-full md:w-1/2 order-3 md:order-1">
+<div class="hidden md:block">
+<div class="px-8 py-4 bg-surface-container-low rounded-xl text-sm font-medium text-primary uppercase tracking-widest w-fit ml-auto">Kiến thức nền tảng</div>
+</div>
+</div>
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 h-14 w-14 items-center justify-center rounded-full bg-primary-container text-white z-10 border-4 border-surface group-hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</div>
+<div class="w-full md:w-1/2 flex justify-start order-2 md:order-3">
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-transparent group-hover:border-primary-fixed-dim transition-all duration-300 w-full max-w-md h-full flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-4">
+<div class="md:hidden flex h-12 w-12 items-center justify-center rounded-full bg-primary-container text-white shrink-0">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</div>
+<h3 class="text-xl font-bold text-primary">Lý thuyết &amp; Đạo đức</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Nắm vững 600 câu hỏi luật giao thông, thi thử trực quan trên ứng dụng và trải nghiệm học trên cabin mô phỏng thực tế.</p>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center gap-8 group">
+<div class="w-full md:w-1/2 flex justify-end order-2 md:order-1">
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-transparent group-hover:border-primary-fixed-dim transition-all duration-300 w-full max-w-md h-full flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-4">
+<div class="md:hidden flex h-12 w-12 items-center justify-center rounded-full bg-primary-container text-white shrink-0">
+<span class="material-symbols-outlined" data-icon="minor_crash">minor_crash</span>
+</div>
+<h3 class="text-xl font-bold text-primary">Tập lái xe sa hình</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Làm quen với các bộ phận của xe, tập lái 11 bài thi liên hoàn trong sân sa hình tiêu chuẩn dưới sự hướng dẫn của chuyên gia.</p>
+</div>
+</div>
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 h-14 w-14 items-center justify-center rounded-full bg-primary-container text-white z-10 border-4 border-surface group-hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined" data-icon="minor_crash">minor_crash</span>
+</div>
+<div class="w-full md:w-1/2 order-3 md:order-3">
+<div class="hidden md:block px-8 py-4 bg-surface-container-low rounded-xl text-sm font-medium text-primary uppercase tracking-widest w-fit">Kỹ năng sân bãi</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col md:flex-row items-center gap-8 group">
+<div class="w-full md:w-1/2 order-3 md:order-1">
+<div class="hidden md:block">
+<div class="px-8 py-4 bg-surface-container-low rounded-xl text-sm font-medium text-primary uppercase tracking-widest w-fit ml-auto">Kinh nghiệm thực tế</div>
+</div>
+</div>
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 h-14 w-14 items-center justify-center rounded-full bg-primary-container text-white z-10 border-4 border-surface group-hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined" data-icon="distance">distance</span>
+</div>
+<div class="w-full md:w-1/2 flex justify-start order-2 md:order-3">
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-transparent group-hover:border-primary-fixed-dim transition-all duration-300 w-full max-w-md h-full flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-4">
+<div class="md:hidden flex h-12 w-12 items-center justify-center rounded-full bg-primary-container text-white shrink-0">
+<span class="material-symbols-outlined" data-icon="distance">distance</span>
+</div>
+<h3 class="text-xl font-bold text-primary">Chạy đường trường DAT</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Tích lũy tối thiểu 710km (hoặc 810km) lái xe đường trường có giám sát bằng thiết bị DAT để làm quen với giao thông thực tế.</p>
+</div>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col md:flex-row items-center gap-8 group">
+<div class="w-full md:w-1/2 flex justify-end order-2 md:order-1">
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-transparent group-hover:border-primary-fixed-dim transition-all duration-300 w-full max-w-md h-full flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-4">
+<div class="md:hidden flex h-12 w-12 items-center justify-center rounded-full bg-primary-container text-white shrink-0">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+</div>
+<h3 class="text-xl font-bold text-primary">Thi chứng chỉ &amp; Sát hạch</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Hoàn thành kỳ thi tốt nghiệp tại trường và tham dự kỳ thi sát hạch quốc gia do Sở GTVT tổ chức chấm điểm.</p>
+</div>
+</div>
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 h-14 w-14 items-center justify-center rounded-full bg-primary-container text-white z-10 border-4 border-surface group-hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+</div>
+<div class="w-full md:w-1/2 order-3 md:order-3">
+<div class="hidden md:block px-8 py-4 bg-surface-container-low rounded-xl text-sm font-medium text-primary uppercase tracking-widest w-fit">Thử thách cuối cùng</div>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="flex flex-col md:flex-row items-center gap-8 group">
+<div class="w-full md:w-1/2 order-3 md:order-1">
+<div class="hidden md:block">
+<div class="px-8 py-4 bg-primary-container rounded-xl text-sm font-bold text-white uppercase tracking-widest w-fit ml-auto">Thành công</div>
+</div>
+</div>
+<div class="hidden md:flex absolute left-1/2 -translate-x-1/2 h-14 w-14 items-center justify-center rounded-full bg-green-600 text-white z-10 border-4 border-surface group-hover:scale-110 transition-transform shadow-lg">
+<span class="material-symbols-outlined" data-icon="card_membership">card_membership</span>
+</div>
+<div class="w-full md:w-1/2 flex justify-start order-2 md:order-3">
+<div class="bg-gradient-to-br from-primary to-primary-container p-8 rounded-2xl shadow-xl border border-white/20 transition-all duration-300 w-full max-w-md h-full flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-4">
+<div class="md:hidden flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white shrink-0">
+<span class="material-symbols-outlined" data-icon="card_membership">card_membership</span>
+</div>
+<h3 class="text-xl font-bold text-on-primary">Nhận Bằng Lái!</h3>
+</div>
+<p class="text-on-primary-container leading-relaxed">Chúc mừng bạn đã chính thức trở thành tài xế! Tấm bằng lái xe sẽ được gửi về tận tay bạn sau kỳ thi sát hạch.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTAs / Stats -->
+<section class="bg-surface-container-low py-20 px-8">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="flex flex-col items-center">
+<span class="text-4xl font-black text-primary mb-2">-0.02em tracking-tighter"&gt;95%</span>
+<span class="text-on-surface-variant font-medium">Tỷ lệ đậu ngay lần đầu</span>
+</div>
+<div class="flex flex-col items-center border-y md:border-y-0 md:border-x border-outline-variant/30 py-8 md:py-0">
+<span class="text-4xl font-black text-primary mb-2 tracking-tighter">4.5 Tháng</span>
+<span class="text-on-surface-variant font-medium">Thời gian trung bình cầm bằng</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-4xl font-black text-primary mb-2 tracking-tighter">5000+</span>
+<span class="text-on-surface-variant font-medium">Học viên đã tốt nghiệp</span>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="w-full py-12 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200/50 dark:border-slate-800/50 flex flex-col md:flex-row justify-between items-center px-12 gap-6">
+<div class="text-lg font-bold text-slate-900 dark:text-white">
+            The Precision Navigator
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Liên hệ</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Điều khoản</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Bảo mật</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Trợ giúp</a>
+</div>
+<div class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 opacity-80">
+            © 2024 The Precision Navigator Driving School. All rights reserved.
+        </div>
+</footer>
+</body></html>

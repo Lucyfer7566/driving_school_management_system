@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Precision Driving | Driving School Management System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d9d9e5",
+                        "surface-container-high": "#e8e7f3",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#faf8ff",
+                        "surface-bright": "#faf8ff",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ffc9b7",
+                        "on-secondary-container": "#3d4c83",
+                        "outline": "#747686",
+                        "on-primary-container": "#cad3ff",
+                        "tertiary": "#7f2500",
+                        "inverse-primary": "#b7c4ff",
+                        "secondary-fixed-dim": "#b7c4ff",
+                        "on-surface-variant": "#434655",
+                        "surface-container-low": "#f3f2fe",
+                        "inverse-surface": "#2e3039",
+                        "outline-variant": "#c4c5d7",
+                        "surface-variant": "#e2e1ed",
+                        "surface-container-highest": "#e2e1ed",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1a1b23",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#dce1ff",
+                        "surface-tint": "#2151da",
+                        "on-primary-fixed": "#001551",
+                        "on-background": "#1a1b23",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-primary": "#ffffff",
+                        "surface": "#faf8ff",
+                        "tertiary-container": "#a73400",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "secondary-container": "#b0befe",
+                        "on-secondary-fixed-variant": "#35437b",
+                        "on-secondary-fixed": "#03164d",
+                        "primary-container": "#1d4ed8",
+                        "secondary": "#4d5b94",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "primary-fixed": "#dce1ff",
+                        "primary": "#0037b0",
+                        "surface-container": "#ededf9",
+                        "inverse-on-surface": "#f0f0fb",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #faf8ff; color: #1a1b23; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(24px); }
+        .hero-gradient { background: linear-gradient(135deg, #0037b0 0%, #1D4ED8 100%); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="bg-[#faf8ff] shadow-[0_4px_20px_-10px_rgba(0,55,176,0.1)] full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-black text-[#0037b0] tracking-tighter">
+                Precision Driving
+            </div>
+<nav class="hidden md:flex items-center gap-8 font-['Inter'] font-semibold tracking-tight leading-6">
+<a class="text-[#0037b0] font-bold border-b-2 border-[#0037b0] pb-1" href="#">Khóa học</a>
+<a class="text-slate-600 font-medium hover:text-[#1D4ED8] transition-colors duration-200" href="#">Lịch học</a>
+<a class="text-slate-600 font-medium hover:text-[#1D4ED8] transition-colors duration-200" href="#">Học phí</a>
+<a class="text-slate-600 font-medium hover:text-[#1D4ED8] transition-colors duration-200" href="#">Hướng dẫn</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold text-sm hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">
+                    Đăng ký học ngay
+                </button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-12 pb-24 md:pt-20 md:pb-32 hero-gradient text-on-primary">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<h1 class="text-5xl md:text-[60px] font-extrabold leading-[1.1] tracking-tight mb-6">
+                        Đăng ký học lái xe nhanh chóng &amp; quản lý thông minh
+                    </h1>
+<p class="text-lg md:text-xl text-primary-fixed opacity-90 mb-10 max-w-lg leading-relaxed">
+                        Quản lý lịch học, hồ sơ và tiến độ đào tạo trên một nền tảng duy nhất dành cho học viên hiện đại.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-xl font-bold hover:scale-[1.02] transition-transform shadow-xl">
+                            Đăng ký ngay
+                        </button>
+<button class="border-2 border-primary-fixed text-primary-fixed px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-colors">
+                            Xem khóa học
+                        </button>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="glass-panel p-6 rounded-[32px] shadow-2xl border border-white/20 transform rotate-2 hover:rotate-0 transition-transform duration-700">
+<div class="bg-surface-container-low rounded-2xl overflow-hidden aspect-[4/3] relative">
+<img alt="Dashboard View" class="w-full h-full object-cover grayscale-[0.2]" data-alt="Modern premium car dashboard interior with sleek digital interfaces and minimalist design under soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWBp-GCIU3DswAAJTKLJ0a9eq3-Rdhpr2IX6Li0zq25AF4E4CMAsOPxBhXQAgmYBAA0pk7eUodCb1jSKpNcgJZYNS2VlSQuwQ7Yz2a5IE86kS7m6TU3dBViNAz_d5xclXiEs-y7adnAoKKDRtEIq0IPL1Sk8mX88ZmFoeOw3HWpsK5N8tRc0n_mctOkznXKbnqcneASlRP_8p0iZUYClmG1LZc9EZjmsfIbdDGFUqissxn3aYLgQbDg4jwuYa5kSRKhGpwWEwHHZo"/>
+<div class="absolute top-4 left-4 right-4 flex gap-4">
+<div class="bg-white/80 backdrop-blur p-3 rounded-xl flex-1 shadow-sm">
+<div class="h-2 w-12 bg-primary/20 rounded-full mb-2"></div>
+<div class="h-4 w-20 bg-primary rounded-full"></div>
+</div>
+<div class="bg-white/80 backdrop-blur p-3 rounded-xl flex-1 shadow-sm border-t-2 border-primary">
+<div class="h-2 w-12 bg-primary/20 rounded-full mb-2"></div>
+<div class="h-4 w-24 bg-primary/60 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Decor element -->
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl"></div>
+</div>
+</div>
+<!-- Dynamic Background Elements -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,200 Q100,50 200,200 T400,200" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+</section>
+<!-- Section 1: Benefits -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-low p-8 rounded-2xl flex flex-col items-start gap-4 hover:shadow-[0_32px_32px_-12px_rgba(0,55,176,0.06)] transition-all duration-300 group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform" data-icon="app_registration">app_registration</span>
+<h3 class="text-xl font-bold text-on-surface">Đăng ký online</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Nộp hồ sơ trực tuyến chỉ trong 5 phút, không cần chờ đợi tại văn phòng.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl flex flex-col items-start gap-4 hover:shadow-[0_32px_32px_-12px_rgba(0,55,176,0.06)] transition-all duration-300 group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform" data-icon="monitoring">monitoring</span>
+<h3 class="text-xl font-bold text-on-surface">Theo dõi tiến độ</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Cập nhật kết quả học tập và số giờ lái thực tế ngay trên ứng dụng di động.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl flex flex-col items-start gap-4 hover:shadow-[0_32px_32px_-12px_rgba(0,55,176,0.06)] transition-all duration-300 group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform" data-icon="calendar_month">calendar_month</span>
+<h3 class="text-xl font-bold text-on-surface">Quản lý lịch học</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Chủ động đặt lịch học lái với giảng viên yêu thích theo khung giờ rảnh.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl flex flex-col items-start gap-4 hover:shadow-[0_32px_32px_-12px_rgba(0,55,176,0.06)] transition-all duration-300 group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h3 class="text-xl font-bold text-on-surface">Thanh toán minh bạch</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Học phí trọn gói được liệt kê chi tiết, không phát sinh chi phí ngoài dự kiến.</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Process -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-extrabold text-on-surface mb-4 tracking-tight">Hành trình 4 bước chinh phục tay lái</h2>
+<p class="text-on-surface-variant">Quy trình đơn giản, chuyên nghiệp và hiệu quả cao.</p>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 relative">
+<!-- Progress Line (Background) -->
+<div class="absolute top-12 left-0 w-full h-2 bg-surface-variant rounded-full hidden md:block">
+<div class="h-full w-1/4 bg-primary rounded-full"></div>
+</div>
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center text-center gap-4 group">
+<div class="w-24 h-24 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-xl shadow-primary/30 ring-8 ring-surface-container-low">
+<span class="material-symbols-outlined text-4xl" data-icon="edit_note">edit_note</span>
+</div>
+<h4 class="font-bold text-lg mt-2">Đăng ký</h4>
+<p class="text-xs text-on-surface-variant max-w-[150px]">Chọn khóa học và điền thông tin cơ bản.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center gap-4 group">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest border-2 border-primary-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors ring-8 ring-surface-container-low">
+<span class="material-symbols-outlined text-4xl" data-icon="verified_user">verified_user</span>
+</div>
+<h4 class="font-bold text-lg mt-2">Xác minh</h4>
+<p class="text-xs text-on-surface-variant max-w-[150px]">Hoàn tất hồ sơ pháp lý qua app.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center gap-4 group">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest border-2 border-primary-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors ring-8 ring-surface-container-low">
+<span class="material-symbols-outlined text-4xl" data-icon="school">school</span>
+</div>
+<h4 class="font-bold text-lg mt-2">Xếp lớp</h4>
+<p class="text-xs text-on-surface-variant max-w-[150px]">Nhận thông tin giáo viên và lịch khai giảng.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center gap-4 group">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest border-2 border-primary-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors ring-8 ring-surface-container-low">
+<span class="material-symbols-outlined text-4xl" data-icon="directions_car">directions_car</span>
+</div>
+<h4 class="font-bold text-lg mt-2">Học &amp; thi</h4>
+<p class="text-xs text-on-surface-variant max-w-[150px]">Thực hành đường trường và thi sát hạch.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Courses -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-extrabold text-on-surface mb-2 tracking-tight">Khóa học nổi bật</h2>
+<p class="text-on-surface-variant">Lựa chọn bằng lái phù hợp với nhu cầu của bạn</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all" href="#">
+                    Tất cả khóa học <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden group hover:shadow-2xl transition-all duration-500 border border-surface-container">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="B1 License" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern white sedan car driving on a scenic coastal road during sunset with soft orange light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfERRS9ElcHhN2VWuCv-aRZrYkOYMhnx_rYEEU7_fIeFPKVl-duaF7Uq418VR0CZEFXh0ofU1PN3NkHsAH9Hf_XJU9_VJCjzB8mLgDQAFHaILG82NjYqvAWEqmYw5G0WxcyAvONmVMhK78RIlN-ar8EebWF5dzt0EiiP8vF3R8xkZERVE9wI4N67E91xiS9-2BJ4q66MnMElXEyG33KWv8BnQGAOGdFSe9PJ4r-4ZlkZPtqNyiSxWfZW8m5C4MkNjQ7NZP8sNYI8c"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">Phổ biến</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 line-clamp-2">Hạng B1 - Xe số tự động (Không hành nghề)</h3>
+<div class="flex items-center gap-4 mb-6 text-on-surface-variant text-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="schedule">schedule</span> 3 Tháng</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="payments">payments</span> 12.000.000đ</span>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-primary font-bold rounded-xl group-hover:bg-primary group-hover:text-on-primary transition-colors">Xem chi tiết</button>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden group hover:shadow-2xl transition-all duration-500 border border-surface-container">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="B2 License" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Manual transmission gear shift in a sports car interior with cinematic side lighting and focus on the handle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg78e-WkIqMpFdQIgsXGTULAVIO1FpKs5VxKcw2KBbgDaNs-qNb5c7v-5LdOL3qsSxFHjQbOr0LyMJdhWzk5V6PCulixCkZQgiQf3DQalLg6gG7zUxczkmaUkuRsht82vKTz-qanDL4nLxE-l8eGgiuGY_ZQPC0NxHieL2QSgmKYFPbADgNNzsgcovfuiDOez9wCnFPCHzIIX2uGg74ZuquEbkxYRDxXVMLIc0aAmX83UWlGgUUMXpZRwBSESmENkNlmck8dhgPXI"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 line-clamp-2">Hạng B2 - Xe số sàn &amp; Số tự động (Hành nghề)</h3>
+<div class="flex items-center gap-4 mb-6 text-on-surface-variant text-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="schedule">schedule</span> 3.5 Tháng</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="payments">payments</span> 14.500.000đ</span>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-primary font-bold rounded-xl group-hover:bg-primary group-hover:text-on-primary transition-colors">Xem chi tiết</button>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden group hover:shadow-2xl transition-all duration-500 border border-surface-container">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="C License" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Large heavy cargo truck on a highway under bright clear daylight with blue sky background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArf6EOz-V-iwdcxxl1BcTuiA0AJPewPhJhVVZwG1cNW6BSAEIMoMEKcb669u-wjT6CtZcaoALzHYM0ujvrbd619QeMyPJPYjIBE4qIqGaTxZ0itOtRLHlAlggLFKxsfjdVO4P0kvH7RZFWlgc9tDQkW0DDuvxPPMRbVMN7bYp5WDWuKumACfzfzn6WFjNqVUr4iOr3C1e6ekrz3weRcy0oTOMleA_AA0YoXWvL-GOpy7N5R9kY9Y41TCMUQLGC7xksm5HRZm_9L64"/>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 line-clamp-2">Hạng C - Xe tải chuyên dụng</h3>
+<div class="flex items-center gap-4 mb-6 text-on-surface-variant text-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="schedule">schedule</span> 5 Tháng</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="payments">payments</span> 18.000.000đ</span>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-primary font-bold rounded-xl group-hover:bg-primary group-hover:text-on-primary transition-colors">Xem chi tiết</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Social Proof -->
+<section class="py-24 bg-white border-y border-surface-variant/30">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20 text-center">
+<div>
+<div class="text-5xl font-black text-primary mb-2 -tracking-widest">15k+</div>
+<div class="text-on-surface-variant font-medium">Học viên tốt nghiệp</div>
+</div>
+<div>
+<div class="text-5xl font-black text-primary mb-2 -tracking-widest">98%</div>
+<div class="text-on-surface-variant font-medium">Tỷ lệ đỗ sát hạch</div>
+</div>
+<div>
+<div class="text-5xl font-black text-primary mb-2 -tracking-widest">12+</div>
+<div class="text-on-surface-variant font-medium">Năm kinh nghiệm</div>
+</div>
+<div>
+<div class="text-5xl font-black text-primary mb-2 -tracking-widest">45+</div>
+<div class="text-on-surface-variant font-medium">Giảng viên tận tâm</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-8 bg-surface-container-low rounded-3xl relative">
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-8" data-icon="format_quote">format_quote</span>
+<div class="flex gap-4 items-center mb-6">
+<div class="w-12 h-12 rounded-full bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young smiling professional man with short dark hair in high resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhtASSglcX9gbjvT6yAtisn5ZwCcUYf1TKbegQXeKUoNH4M1yHw_ELFJf9LHJi0tY8r9VZDIuq1xwGBxFaL1gLWhsrIlph6--GnLxIXmVUM9VTH7S2jrHK4mQp2RpwdHyvABJWgQsQkTaGXBWHSQc8h3ja3e14LFSY0hEbptfBmD05PDcxlBwr6wP4heBYY9ThTWaW0MyrqsXATdGI5uLmODiVhlIywWpUBA3PnDDCpyt55ikfpIGAMdSNnWkvEOZADD-2sXgs_SM"/>
+</div>
+<div>
+<h5 class="font-bold">Minh Hoàng</h5>
+<div class="flex text-tertiary-container text-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant italic leading-relaxed">"Hệ thống quản lý rất thông minh, tôi có thể chủ động đổi lịch tập lái khi có việc đột xuất mà không cần gọi điện thoại phiền phức."</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-3xl relative">
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-4 right-8" data-icon="format_quote">format_quote</span>
+<div class="flex gap-4 items-center mb-6">
+<div class="w-12 h-12 rounded-full bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a cheerful young woman with long wavy hair smiling warmly at the camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeVGp_8B49ZmehByucrfoQ_aX6CxpKT-b8UA-uyhMsXkwcbKwqrtrurvj6enGQig29lbZ9b-yMae6wQtycp2l_qY3FRNdFZp0qxT0zqY0M6sE9JXfHCm4wlnQOpcKvEvA9hEmnrQOiGRtRlFx282PKWCkslV0az84SU0q8dKeKS9ZbkWScyd5llY6Kvb9jrFLYedk3_6DgcFpua1Z1Hs0pnio9kM78u6Ub7PXxm6yqRTg2Ts_HwbYCIjyFoB-aYtD8hIum6cKisAE"/>
+</div>
+<div>
+<h5 class="font-bold">Thu Trang</h5>
+<div class="flex text-tertiary-container text-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant italic leading-relaxed">"Thầy dạy cực kỳ nhiệt tình và xe tập lái đời mới, sạch sẽ. Quy trình đăng ký online giúp mình tiết kiệm rất nhiều thời gian."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Final CTA -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<div class="hero-gradient rounded-[40px] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-primary/30">
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-black text-on-primary mb-8 leading-tight">Bắt đầu hành trình lái xe hôm nay</h2>
+<p class="text-primary-fixed opacity-90 text-lg mb-12">Chỉ mất 3 phút để đặt chỗ cho tương lai phía sau tay lái của bạn.</p>
+<button class="w-full md:w-auto bg-surface-container-lowest text-primary px-12 py-5 rounded-2xl font-black text-xl hover:scale-[1.03] transition-transform shadow-xl">
+                        ĐĂNG KÝ HỌC NGAY
+                    </button>
+</div>
+<!-- Abstract visual decor -->
+<div class="absolute -left-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+<div class="absolute top-0 right-0 w-full h-full pointer-events-none opacity-20">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0 100 C 20 0 50 0 100 100" fill="none" stroke="white" stroke-width="0.1"></path>
+<path d="M0 100 C 30 10 60 10 100 100" fill="none" stroke="white" stroke-width="0.1"></path>
+</svg>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200">
+<div class="max-w-7xl mx-auto py-16 px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="text-lg font-bold text-[#0037b0] mb-6">Precision Navigator</div>
+<p class="text-slate-500 text-sm leading-relaxed mb-6">Hệ thống đào tạo lái xe ứng dụng công nghệ hàng đầu Việt Nam, mang đến trải nghiệm học tập hiện đại và chuyên nghiệp.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="facebook">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="language">language</span>
+</a>
+</div>
+</div>
+<div>
+<h6 class="font-bold text-on-surface mb-6 uppercase tracking-wider text-xs">Liên hệ</h6>
+<ul class="space-y-4 text-sm text-slate-500">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="location_on">location_on</span>
+<span>123 Đường Ba Đình, Quận 1, TP. Hồ Chí Minh</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="call">call</span>
+<span>Hotline: 1900 6789</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="mail">mail</span>
+<span>info@precisiondriving.vn</span>
+</li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-on-surface mb-6 uppercase tracking-wider text-xs">Liên kết nhanh</h6>
+<ul class="space-y-4 text-sm font-['Inter']">
+<li><a class="text-slate-500 hover:text-[#0037b0] transition-all" href="#">Về chúng tôi</a></li>
+<li><a class="text-slate-500 hover:text-[#0037b0] transition-all" href="#">Khóa học B1/B2</a></li>
+<li><a class="text-slate-500 hover:text-[#0037b0] transition-all" href="#">Thủ tục đăng ký</a></li>
+<li><a class="text-slate-500 hover:text-[#0037b0] transition-all" href="#">Câu hỏi thường gặp</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-on-surface mb-6 uppercase tracking-wider text-xs">Pháp lý</h6>
+<ul class="space-y-4 text-sm font-['Inter']">
+<li><a class="text-slate-500 hover:text-[#0037b0] transition-all underline decoration-transparent hover:decoration-primary" href="#">Điều khoản</a></li>
+<li><a class="text-slate-500 hover:text-[#0037b0] transition-all underline decoration-transparent hover:decoration-primary" href="#">Chính sách bảo mật</a></li>
+<li><a class="text-slate-500 hover:text-[#0037b0] transition-all underline decoration-transparent hover:decoration-primary" href="#">Chính sách hoàn phí</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-6 border-t border-slate-200 text-center text-slate-400 text-xs">
+            © 2024 Precision Navigator Driving School. All rights reserved.
+        </div>
+</footer>
+</body></html>

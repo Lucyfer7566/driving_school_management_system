@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Velocity | Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#0037b0",
+                      "on-primary-container": "#cad3ff",
+                      "on-secondary-container": "#3d4c83",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1a1b23",
+                      "on-secondary-fixed-variant": "#35437b",
+                      "secondary-fixed-dim": "#b7c4ff",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb59c",
+                      "on-error": "#ffffff",
+                      "secondary": "#4d5b94",
+                      "surface-bright": "#faf8ff",
+                      "surface-container-high": "#e8e7f3",
+                      "primary-fixed": "#dce1ff",
+                      "tertiary-fixed": "#ffdbcf",
+                      "background": "#faf8ff",
+                      "secondary-fixed": "#dce1ff",
+                      "on-secondary-fixed": "#03164d",
+                      "surface-container": "#ededf9",
+                      "tertiary-container": "#a73400",
+                      "inverse-on-surface": "#f0f0fb",
+                      "surface": "#faf8ff",
+                      "outline-variant": "#c4c5d7",
+                      "outline": "#747686",
+                      "on-primary-fixed-variant": "#0039b5",
+                      "on-surface": "#1a1b23",
+                      "inverse-primary": "#b7c4ff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#001551",
+                      "inverse-surface": "#2e3039",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#434655",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#b7c4ff",
+                      "on-tertiary-container": "#ffc9b7",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e2e1ed",
+                      "tertiary": "#7f2500",
+                      "surface-tint": "#2151da",
+                      "secondary-container": "#b0befe",
+                      "surface-dim": "#d9d9e5",
+                      "surface-container-low": "#f3f2fe",
+                      "primary-container": "#1d4ed8",
+                      "surface-variant": "#e2e1ed",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "on-tertiary-fixed": "#390c00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(24px);
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed">
+<!-- SideNavBar (Authority: JSON & Design System) -->
+<aside class="h-screen w-64 flex flex-col fixed left-0 top-0 bg-slate-100 dark:bg-slate-900 z-50">
+<div class="flex flex-col h-full p-4 space-y-2">
+<div class="flex items-center gap-3 px-3 py-6 mb-4">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-blue-900 dark:text-blue-100 tracking-tight leading-none">Velocity</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Driving School OS</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-600 text-white rounded-xl shadow-lg shadow-blue-500/20 font-medium transition-all scale-105 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-colors font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-colors font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span>Permissions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-colors font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span>Courses</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-xl transition-colors font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Schedules</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:bg-slate-800/50 rounded-xl transition-colors font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:bg-slate-800/50 rounded-xl transition-colors font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span>Logs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:bg-slate-800/50 rounded-xl transition-colors font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span>Security</span>
+</a>
+</nav>
+<button class="w-full py-4 px-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-xl font-semibold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 mb-4">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                New Lesson
+            </button>
+<div class="pt-4 border-t border-slate-200/50 dark:border-slate-800 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 font-medium hover:bg-slate-200/50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-error font-medium hover:bg-error-container/20 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar (Authority: JSON & Design System) -->
+<header class="flex justify-between items-center w-[calc(100%-16rem)] ml-64 px-8 py-4 sticky top-0 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl z-40 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-6">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-surface-container border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="Global system search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-blue-50/50 transition-all rounded-lg relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-slate-50"></span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-blue-50/50 transition-all rounded-lg">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Alex Thompson</p>
+<p class="text-[10px] text-slate-500 font-medium">Lead Administrator</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-xl object-cover ring-2 ring-primary/10" data-alt="professional headshot of a confident administrator in a clean office environment with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFo6U3xKL1typG1ww1CzcXRm-UUoDh6-n1SkFJW4fY1h8PFv4Gqe1bOBXKGoYkOruZ1PqU45V4ThNq_z2Ol50fs9061gf4DcGbZE7AuSPSELF2VaIDy9TGeuluxdAq9GEd_9BCvhhZ1ily9FFG9b8N2OhAG1MFOtAmmgFavEwyzq9X3JNNC-qQc4P-GaytTBr_yRex-KT3A3OMFjrMBzsFL0CNsEf4jNNBvQ53eko1i7RgqYOTmQ8lcLVpjg4KYDocUieQTVXIuo0"/>
+</div>
+</div>
+</header>
+<main class="ml-64 p-8 space-y-8">
+<!-- Dashboard Header -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-black text-blue-900 tracking-tighter">System Oversight</h2>
+<p class="text-on-surface-variant font-medium">Real-time telemetry and management controls.</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high p-1 rounded-xl">
+<button class="px-4 py-2 bg-surface-container-lowest shadow-sm rounded-lg text-xs font-bold text-primary">Live Data</button>
+<button class="px-4 py-2 text-xs font-bold text-slate-500">History</button>
+</div>
+</div>
+<!-- Row 1: System Statistics Bento -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-gradient-to-br from-primary to-primary-container p-6 rounded-3xl shadow-xl shadow-primary/20 relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-primary-fixed/70 text-xs font-bold uppercase tracking-widest mb-1">Total Users</p>
+<h3 class="text-4xl font-black text-white tracking-tighter">1,284</h3>
+<div class="mt-4 flex items-center gap-2 text-white/80 text-xs font-medium">
+<span class="bg-white/20 px-2 py-0.5 rounded-md">+12.5%</span>
+<span>vs last month</span>
+</div>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-white/10 text-9xl group-hover:scale-110 transition-transform duration-500">group</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-secondary-container/30 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Active Now</span>
+</div>
+<p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">Active Courses</p>
+<h3 class="text-3xl font-black text-on-surface tracking-tighter">42</h3>
+<div class="mt-3 w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-3/4 rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-error-container/30 rounded-xl flex items-center justify-center text-error">
+<span class="material-symbols-outlined">shield_with_heart</span>
+</div>
+<span class="text-[10px] font-bold text-error uppercase tracking-widest">Secure</span>
+</div>
+<p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">Security Events</p>
+<h3 class="text-3xl font-black text-on-surface tracking-tighter">0</h3>
+<p class="text-xs text-slate-500 mt-2 font-medium">Last 24 hours</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-tertiary-container/10 rounded-xl flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-emerald-600 text-xs font-bold">+99.8%</span>
+</div>
+<p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-1">Payment Success</p>
+<h3 class="text-3xl font-black text-on-surface tracking-tighter">98.4%</h3>
+<p class="text-xs text-slate-500 mt-2 font-medium">Processing stability</p>
+</div>
+</div>
+<!-- Row 2: Operational & Security Control -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- User Status Monitor -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-3xl p-6 flex flex-col">
+<h4 class="text-sm font-black text-on-surface uppercase tracking-wider mb-6">User Status Monitor</h4>
+<div class="space-y-4 flex-1">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+<span class="text-sm font-bold">Active Sessions</span>
+</div>
+<span class="text-lg font-black text-primary">842</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-amber-500"></div>
+<span class="text-sm font-bold">Locked Accounts</span>
+</div>
+<span class="text-lg font-black text-on-surface">12</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="text-sm font-bold">Suspended</span>
+</div>
+<span class="text-lg font-black text-error">5</span>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-slate-200">
+<div class="flex justify-between items-center text-xs font-bold text-slate-500 mb-2">
+<span>MFA Adoption Rate</span>
+<span>92%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-primary h-full w-[92%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Recent Audit Logs Feed -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-3xl p-6 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h4 class="text-sm font-black text-on-surface uppercase tracking-wider">Recent Audit Logs</h4>
+<button class="text-xs font-bold text-primary hover:underline">View All Logs</button>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-4 py-3 border-b border-slate-50 last:border-0 hover:bg-slate-50 transition-colors rounded-lg px-2">
+<div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Admin <span class="text-primary">alex.t</span> updated permissions for Instructor <span class="text-primary">Sarah J.</span></p>
+<p class="text-[10px] text-slate-400 font-medium">2 minutes ago • 192.168.1.45</p>
+</div>
+<span class="text-[10px] font-bold text-slate-400 px-2 py-1 bg-slate-100 rounded">AUTH_LEVEL_CHANGE</span>
+</div>
+<div class="flex items-center gap-4 py-3 border-b border-slate-50 last:border-0 hover:bg-slate-50 transition-colors rounded-lg px-2">
+<div class="w-8 h-8 rounded-lg bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Password reset forced for <span class="text-primary">mark.d@velocity.edu</span></p>
+<p class="text-[10px] text-slate-400 font-medium">14 minutes ago • System Trigger</p>
+</div>
+<span class="text-[10px] font-bold text-slate-400 px-2 py-1 bg-slate-100 rounded">SEC_POLICY</span>
+</div>
+<div class="flex items-center gap-4 py-3 border-b border-slate-50 last:border-0 hover:bg-slate-50 transition-colors rounded-lg px-2">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">VNPay Transaction #90284 verified successfully</p>
+<p class="text-[10px] text-slate-400 font-medium">28 minutes ago • Payment Gateway</p>
+</div>
+<span class="text-[10px] font-bold text-slate-400 px-2 py-1 bg-slate-100 rounded">FIN_TRANSACTION</span>
+</div>
+<div class="flex items-center gap-4 py-3 border-b border-slate-50 last:border-0 hover:bg-slate-50 transition-colors rounded-lg px-2">
+<div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">System configuration backup completed</p>
+<p class="text-[10px] text-slate-400 font-medium">1 hour ago • Auto-Task</p>
+</div>
+<span class="text-[10px] font-bold text-slate-400 px-2 py-1 bg-slate-100 rounded">SYS_MAINTENANCE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 3: Course & Revenue -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Revenue Chart (Asymmetric Visual) -->
+<div class="lg:col-span-7 bg-gradient-to-br from-slate-900 to-blue-950 rounded-3xl p-8 relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h4 class="text-sm font-bold text-blue-400 uppercase tracking-widest mb-2">Revenue Streams</h4>
+<h3 class="text-4xl font-black text-white tracking-tighter">$142,500.00</h3>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50"></span>
+<span class="text-xs font-bold text-slate-300">VNPay</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-pink-500 rounded-full shadow-lg shadow-pink-500/50"></span>
+<span class="text-xs font-bold text-slate-300">MoMo</span>
+</div>
+</div>
+</div>
+<!-- Abstract Visualization -->
+<div class="flex items-end gap-3 h-48">
+<div class="flex-1 bg-white/5 h-[30%] rounded-t-lg relative group transition-all hover:bg-white/10">
+<div class="absolute bottom-0 w-full bg-blue-600 h-2/3 rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-white/5 h-[50%] rounded-t-lg relative group transition-all hover:bg-white/10">
+<div class="absolute bottom-0 w-full bg-blue-600 h-3/4 rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-white/5 h-[80%] rounded-t-lg relative group transition-all hover:bg-white/10">
+<div class="absolute bottom-0 w-full bg-blue-600 h-1/2 rounded-t-lg"></div>
+<div class="absolute bottom-0 w-full bg-pink-500 h-1/4 rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-white/5 h-[60%] rounded-t-lg relative group transition-all hover:bg-white/10">
+<div class="absolute bottom-0 w-full bg-blue-600 h-4/5 rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-white/5 h-[90%] rounded-t-lg relative group transition-all hover:bg-white/10">
+<div class="absolute bottom-0 w-full bg-blue-600 h-[85%] rounded-t-lg"></div>
+<div class="absolute bottom-0 w-full bg-pink-500 h-[10%] rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-white/5 h-[40%] rounded-t-lg relative group transition-all hover:bg-white/10">
+<div class="absolute bottom-0 w-full bg-blue-600 h-full rounded-t-lg"></div>
+</div>
+</div>
+<div class="flex justify-between mt-4 px-2">
+<span class="text-[10px] font-bold text-slate-500">MON</span>
+<span class="text-[10px] font-bold text-slate-500">TUE</span>
+<span class="text-[10px] font-bold text-slate-500">WED</span>
+<span class="text-[10px] font-bold text-slate-500">THU</span>
+<span class="text-[10px] font-bold text-slate-500">FRI</span>
+<span class="text-[10px] font-bold text-slate-500">SAT</span>
+</div>
+</div>
+</div>
+<!-- Course Discovery Analytics -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-surface-container-low rounded-3xl p-6 flex-1">
+<h4 class="text-sm font-black text-on-surface uppercase tracking-wider mb-6">Trending Courses</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<div>
+<p class="text-sm font-bold">Advanced Night Driving</p>
+<p class="text-[10px] text-slate-500">24 New Enrollments this week</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-emerald-500">trending_up</span>
+</div>
+<div class="flex items-center justify-between group cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<p class="text-sm font-bold">Class C Heavy Vehicle</p>
+<p class="text-[10px] text-slate-500">18 New Enrollments this week</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300">trending_flat</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest rounded-3xl p-6 flex items-center gap-4 relative overflow-hidden">
+<div class="flex-1 relative z-10">
+<p class="text-[10px] font-black text-primary-container uppercase tracking-widest mb-1">Global Success Rate</p>
+<p class="text-2xl font-black text-on-surface tracking-tighter">88.5% Passing</p>
+</div>
+<div class="w-16 h-16 rounded-full border-4 border-primary border-t-slate-200 flex items-center justify-center relative z-10">
+<span class="text-xs font-black">A+</span>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">military_tech</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 4: Quick Actions -->
+<div>
+<h4 class="text-xs font-black text-slate-500 uppercase tracking-[0.2em] mb-6 px-1">Admin Power Controls</h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<button class="flex items-center justify-between p-5 bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div>
+<span class="block text-sm font-bold">Create User</span>
+<span class="block text-[10px] text-slate-400 font-medium">Provision new account</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-5 bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-600 group-hover:bg-slate-900 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">rule</span>
+</div>
+<div>
+<span class="block text-sm font-bold">Manage Permissions</span>
+<span class="block text-[10px] text-slate-400 font-medium">Edit role boundaries</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-5 bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">password</span>
+</div>
+<div>
+<span class="block text-sm font-bold">Reset Password</span>
+<span class="block text-[10px] text-slate-400 font-medium">Force credentials reset</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-5 bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-error-container/20 flex items-center justify-center text-error group-hover:bg-error group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">logout</span>
+</div>
+<div>
+<span class="block text-sm font-bold">Revoke Sessions</span>
+<span class="block text-[10px] text-slate-400 font-medium">Logout all global users</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Logic Check: Restricted to Dashboard) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl shadow-primary/40 flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+</body></html>
