@@ -15,9 +15,12 @@ export function UserNavbar() {
 <Link className="text-slate-600 font-medium hover:text-[#1D4ED8] transition-colors duration-200" to="#">Hướng dẫn</Link>
 </nav>
 <div className="flex items-center gap-4">
-<button className="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold text-sm hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">
+<Link to="/admin" className="text-primary font-semibold text-sm hover:text-blue-800 transition-colors">
+                    Đăng nhập
+                </Link>
+<Link to="/courses" className="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-semibold text-sm hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20 inline-flex justify-center items-center text-center">
                     Đăng ký học ngay
-                </button>
+                </Link>
 </div>
 </div>
 </header>
