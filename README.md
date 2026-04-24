@@ -31,7 +31,7 @@ Dự án được thiết kế theo kiến trúc **Client-Server (SPA + REST API
 
 ---
 
-## 🏗 Kiến trúc hệ thống
+## Kiến trúc hệ thống
 
 ```
 ┌──────────────────┐         HTTP/REST         ┌──────────────────┐
@@ -51,7 +51,7 @@ Dự án được thiết kế theo kiến trúc **Client-Server (SPA + REST API
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
 | Công nghệ | Phiên bản | Vai trò |
@@ -114,7 +114,7 @@ driving_school_management_system/
 
 ---
 
-## 💻 Yêu cầu hệ thống
+## Yêu cầu hệ thống
 
 Trước khi cài đặt, đảm bảo máy bạn đã có:
 
