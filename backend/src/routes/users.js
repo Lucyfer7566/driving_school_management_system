@@ -252,11 +252,15 @@ router.get('/me', authRequired, attachUser, (req, res) => {
  *                 code: FORBIDDEN
  *                 message: "Forbidden: insufficient role"
  */
-router.get('/', authRequired, attachUser, requireRole('ADMIN'), async (req, res, next) => {
+router.get('/', authRequired, attachUser, async (req, res, next) => {
   try {
     const parsed = listQuerySchema.safeParse(req.query);
     if (!parsed.success) {
       return sendError(res, 400, 'INVALID_REQUEST', formatValidationErrors(parsed));
+    }
+
+    if (req.currentUser.role !== 'ADMIN' && parsed.data.role !== 'INSTRUCTOR') {
+      return sendError(res, 403, 'FORBIDDEN', 'Forbidden: insufficient role');
     }
 
     const { page = 1, size = 20, keyword, role, status, sort = 'createdAt_desc' } = parsed.data;
