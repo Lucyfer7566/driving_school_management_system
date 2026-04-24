@@ -5,6 +5,13 @@ import CourseCatalog from './pages/CourseCatalog';
 import CourseDetails from './pages/CourseDetails';
 import CourseComparison from './pages/CourseComparison';
 import LearningRoadmap from './pages/LearningRoadmap';
+import AuthPage from './pages/AuthPage';
+import SchedulePage from './pages/SchedulePage';
+import CheckoutPage from './pages/CheckoutPage';
+import TransactionHistory from './pages/TransactionHistory';
+import SupportPage from './pages/SupportPage';
+import UserProfile from './pages/UserProfile';
+import AIChatbot from './components/AIChatbot';
 
 import AdminDashboard from './pages/AdminDashboard';
 import AdminUserManagement from './pages/AdminUserManagement';
@@ -16,6 +23,7 @@ import AdminSecuritySettings from './pages/AdminSecuritySettings';
 function App() {
   return (
     <Router>
+      <AIChatbot />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/courses" element={<CourseCatalog />} />
@@ -23,6 +31,12 @@ function App() {
         <Route path="/compare" element={<CourseComparison />} />
         <Route path="/roadmap" element={<LearningRoadmap />} />
         
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/schedule" element={<SchedulePage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/transactions" element={<TransactionHistory />} />
+        <Route path="/support" element={<SupportPage />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/users" element={<AdminUserManagement />} />
         <Route path="/admin/roles" element={<AdminRolesPermissions />} />

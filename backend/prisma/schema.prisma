@@ -1,5 +1,5 @@
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -8,39 +8,55 @@ generator client {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  name      String
-  role      String   @default("STUDENT") // ADMIN, INSTRUCTOR, STUDENT
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  
+  id                   Int       @id @default(autoincrement())
+  email                String    @unique
+  username             String?   @unique
+  password             String
+  name                 String
+  department           String?
+  role                 String    @default("STUDENT") // ADMIN, INSTRUCTOR, STUDENT
+  status               String    @default("ACTIVE") // ACTIVE, LOCKED, SUSPENDED, DISABLED
+  mfaEnabled           Boolean   @default(false)
+  forcePasswordReset   Boolean   @default(false)
+  sessionTimeout       Int       @default(30)
+  sessionVersion       Int       @default(1)
+  refreshTokenVersion  Int       @default(1)
+  lastLoginAt          DateTime?
+  lastLoginIp          String?
+  passwordResetAt      DateTime?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
   enrollments Enrollment[]
+  payments    Payment[]
+  schedules   Schedule[] @relation("ScheduleInstructor")
+  studentSchedules Schedule[] @relation("ScheduleStudent")
 }
 
 model Course {
-  id          Int      @id @default(autoincrement())
+  id          Int        @id @default(autoincrement())
   title       String
   description String
-  licenseType String   // B1, B2, C
+  licenseType String     // B1, B2, C
   price       Int
   duration    String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
 
   enrollments Enrollment[]
+  schedules   Schedule[]
 }
 
 model Enrollment {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   userId    Int
   courseId  Int
-  status    String   @default("PENDING") // PENDING, ACTIVE, COMPLETED, CANCELLED
-  createdAt DateTime @default(now())
-  
-  user      User     @relation(fields: [userId], references: [id])
-  course    Course   @relation(fields: [courseId], references: [id])
+  status    String    @default("PENDING") // PENDING, ACTIVE, COMPLETED, CANCELLED
+  createdAt DateTime  @default(now())
+
+  user      User      @relation(fields: [userId], references: [id])
+  course    Course    @relation(fields: [courseId], references: [id])
+  payments  Payment[]
 }
 
 model AuditLog {
@@ -51,4 +67,48 @@ model AuditLog {
   ipAddress   String?
   status      String   @default("SUCCESS")
   createdAt   DateTime @default(now())
+}
+
+model RolePermission {
+  id          Int      @id @default(autoincrement())
+  role        String   @unique
+  permissions Json
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Payment {
+  id               Int         @id @default(autoincrement())
+  userId           Int
+  enrollmentId     Int?
+  amount           Int
+  currency         String      @default("VND")
+  method           String
+  status           String      @default("PENDING") // PENDING, PROCESSING, COMPLETED, FAILED, REFUNDED
+  transactionRef   String      @unique
+  refundedAmount   Int         @default(0)
+  providerResponse Json?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  user             User        @relation(fields: [userId], references: [id])
+  enrollment       Enrollment? @relation(fields: [enrollmentId], references: [id])
+}
+
+model Schedule {
+  id           Int       @id @default(autoincrement())
+  courseId     Int?
+  instructorId Int?
+  studentId    Int?
+  lessonDate   DateTime
+  startTime    String
+  endTime      String
+  status       String    @default("SCHEDULED") // SCHEDULED, COMPLETED, CANCELLED
+  notes        String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  course       Course?   @relation(fields: [courseId], references: [id])
+  instructor   User?     @relation("ScheduleInstructor", fields: [instructorId], references: [id])
+  student      User?     @relation("ScheduleStudent", fields: [studentId], references: [id])
 }

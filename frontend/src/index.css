@@ -59,3 +59,12 @@ body { font-family: 'Inter', sans-serif; background-color: var(--color-backgroun
 .glass-panel { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(24px); }
 .hero-gradient { background: linear-gradient(135deg, #0037b0 0%, #1D4ED8 100%); }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Chatbot entrance animation */
+.animate-in {
+  animation: slideUp 0.3s ease-out;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
