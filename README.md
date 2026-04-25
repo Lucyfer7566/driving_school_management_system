@@ -381,7 +381,6 @@ npx prisma generate
 
 | Tài liệu | Đường dẫn | Mô tả |
 |---|---|---|
-| Kịch bản Demo | [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md) | Hướng dẫn từng bước demo trước giảng viên |
 | Technical Spec | [swm501_technical_spec.md](swm501_technical_spec.md) | Tài liệu kỹ thuật tổng hợp dự án |
 | API Docs (live) | http://localhost:8000/api/docs | Swagger UI interactive |
 
