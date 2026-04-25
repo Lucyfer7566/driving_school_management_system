@@ -105,9 +105,6 @@ driving_school_management_system/
 │   ├── .env.example
 │   └── package.json
 │
-├── docs/
-│   └── DEMO_SCRIPT.md          # Kịch bản demo chi tiết
-│
 ├── README.md                   # ← Bạn đang đọc file này
 └── swm501_technical_spec.md    # Tài liệu kỹ thuật dự án
 ```
